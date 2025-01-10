@@ -1,0 +1,30 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة تحكم المريض</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">لوحة تحكم المريض</h1>
+        <div class="list-group">
+            <div class="list-group">
+                <a href="appointments.php" class="list-group-item list-group-item-action">حجز موعد</a>
+                <a href="upload_files.php" class="list-group-item list-group-item-action">رفع ملفات طبية</a>
+                <a href="view_files.php" class="list-group-item list-group-item-action">عرض الملفات الطبية</a>
+                <a href="logout.php" class="list-group-item list-group-item-action">تسجيل الخروج</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
